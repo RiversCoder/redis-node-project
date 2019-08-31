@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><%= title %></title>
+
+<link rel="stylesheet" href="css/styles.css" />
+
+</head>
+
+<body>
+
+<section class="products">
+	<div class="container">
+		<h3>Github API</h3>
+		<p>大喵课堂</p>
+		<div class="search">
+			<input type="text" name="searchInput" id="searchInput" placeholder="请输入Github昵称">
+			<span class="search-btn" id="search-btn">搜索</span>
+		</div>
+		<p class="tips">没有查询到信息呀，请输入正确的名称。</p> 
+	</div>
+</section>
+
+<section class="lists-box">
+    <div class="tips-info" style="display: <%= list.length==0 ? 'block' : 'none' %>">未查询到信息，请检查参数是否传递正确.</div>
+    <div class="search-info">loading……</div>
+	<ul class="lists">
+		<% for(var i=0;i<list.length;i++){ %>    
+			<li class="list-item">
+				<div class="repos-item">
+					<h3 class="repos-item-title"><a href="<%= list[i].reposUrl %>" target="__blank"><%= list[i].reposName %></a></h3>
+					<div class="repos-item-label">
+						<span class="ril-language">lang: <%= list[i].lang %></span>
+						<span class="ril-fork">fork: <%= list[i].fork %></span>
+						<span class="ril-star">star: <%= list[i].star %></span>
+					</div>
+				</div>
+			</li>
+		<% } %>
+	</ul>
+</section>
+
+<script>
+	document.querySelector('#search-btn').addEventListener('click', () => {
+        document.querySelector('.tips-info').style.display = 'none';
+        document.querySelector('.lists').style.display = 'none';
+        document.querySelector('.search-info').style.display = 'block';
+		window.location.href="/?searchValue="+document.querySelector('#searchInput').value.replace(/\s*/g,'');
+	})
+</script>
+</body>
+</html>

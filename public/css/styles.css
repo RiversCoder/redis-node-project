@@ -2,7 +2,7 @@
 
 /* 公共属性 */
 *{margin:0;padding:0;list-style:none;}
-body{background:#fff;font:normal 12px/22px "Microsoft Yahei";}
+body{background:#f4f3f3;font:normal 12px/22px "Microsoft Yahei";overflow-x: hidden;}
 img{border:0;}
 a{text-decoration:none;color:#333;}
 a:hover{color:#1974A1;}
@@ -26,3 +26,15 @@ a:hover{color:#1974A1;}
 
 .products .tips{color:#FFF;margin-top:20px;display:none;text-align:left;padding-left:164px}
 .products .tips.show{display:block}
+
+/* 搜索列表 */
+.lists-box{margin-top:50px;box-sizing: border-box;padding: 0 10%;}
+.lists{width:100%;position: relative;height:auto;margin-bottom:50px;}
+.lists .list-item{ font-size: 14px; padding: 10px 20px;margin-top:20px;background-color:#fff;box-shadow: 0 0 3px rgba(0,0,0,0.1);}
+.lists .list-item .repos-item-title{height: 50px;line-height: 50px;font-size: 18px;}
+.lists .list-item .repos-item-title a:hover{text-decoration: underline;}
+.lists .list-item  .repos-item-label{ width:100%;height:30px;line-height: 30px;display:flex;flex-wrap: nowrap;}
+.lists .list-item  .repos-item-label span{margin-left:50px;}
+.lists .list-item  .repos-item-label span:nth-of-type(1){margin:0;}
+.tips-info{text-align: center;font-size:14px;}
+.search-info{text-align: center;font-size:14px;display: none;}
